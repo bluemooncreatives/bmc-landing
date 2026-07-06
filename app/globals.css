@@ -5,7 +5,11 @@
   --foreground: #171717;
   --font-sans: "Hanken Grotesk", sans-serif;
   --font-mono: monospace;
-  --global-letter-spacing: -0.08em;
+  --global-letter-spacing: -0.06em;
+  /* Tailwind's text-size utilities read `line-height: var(--tw-leading, <per-size-default>)`,
+     a class selector that beats a plain `line-height: 1` on `*`. Setting --tw-leading here
+     feeds that var() directly so every text-* utility resolves to 1 without a specificity fight. */
+  --tw-leading: 1;
 }
 
 @theme inline {
@@ -57,6 +61,7 @@ optgroup,
 textarea,
 ::file-selector-button {
   letter-spacing: var(--global-letter-spacing);
+  line-height: 1;
 }
 
 .hanken-grotesk {

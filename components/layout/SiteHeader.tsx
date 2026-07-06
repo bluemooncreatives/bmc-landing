@@ -74,28 +74,28 @@ export function SiteHeader() {
         />
       ) : null}
 
-      <header className="fixed inset-x-0 top-[50px] z-50 mx-auto w-full max-w-172 px-6">
+      <header className="fixed inset-x-0 top-[50px] z-50 mx-auto w-full max-w-150 px-6">
         {/* Bar: brand pill + toggle.
             Brand-pill box metrics taken from the design's computed styles:
             bg rgb(26,26,28), 18px padding, 54px tall, 12px font, flex-column,
             grow/shrink-0/basis-0, 10px gap, overflow clip. */}
-        <div className="flex items-stretch gap-3">
+        <div className="relative flex items-stretch gap-3">
           <Link
             href="/"
             onClick={() => setOpen(false)}
-            className="relative flex h-[54px] shrink-0 grow basis-0 flex-col items-start justify-center gap-2.5 overflow-clip rounded-2xl bg-[#1a1a1c] p-[18px] text-xs font-medium leading-[18px] text-white"
+            className="relative flex min-w-0 grow basis-0 flex-col items-start justify-center gap-2.5 rounded-sm bg-[#1a1a1c] p-4.5 text-xl font-medium text-white"
           >
-            <span>
+            <span className="block max-w-full truncate">
               BLUE MOON CREATIVES
-              <span className="ml-0.5 align-super text-[8px] text-white/60">®</span>
             </span>
           </Link>
+
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
-            className="flex w-16 items-center justify-center rounded-2xl bg-[#1a1a1c] text-white/85 transition-colors hover:text-white sm:w-24"
+            className="flex w-16 items-center justify-center rounded-sm bg-[#1a1a1c] text-white/85 transition-colors hover:text-white sm:w-24"
           >
             <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
               {open ? (
@@ -109,7 +109,7 @@ export function SiteHeader() {
 
         {/* Mega-menu panel */}
         {open ? (
-          <div className="mt-3 overflow-hidden rounded-2xl bg-white shadow-[0_40px_100px_-30px_rgba(0,0,0,0.65)]">
+          <div className="mt-3 overflow-hidden rounded-sm bg-white shadow-[0_40px_100px_-30px_rgba(0,0,0,0.65)]">
             <div className="grid grid-cols-1 sm:grid-cols-[1.15fr_1fr]">
               {/* Left: navigation */}
               <nav className="flex flex-col gap-3 p-7">
