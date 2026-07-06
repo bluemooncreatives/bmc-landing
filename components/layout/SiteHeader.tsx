@@ -48,11 +48,6 @@ export function SiteHeader() {
     return () => clearInterval(id);
   }, []);
 
-  // Close the menu whenever the route changes.
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
-
   // Lock body scroll + close on Escape while open.
   useEffect(() => {
     if (!open) return;
@@ -87,6 +82,7 @@ export function SiteHeader() {
         <div className="flex items-stretch gap-3">
           <Link
             href="/"
+            onClick={() => setOpen(false)}
             className="relative flex h-[54px] shrink-0 grow basis-0 flex-col items-start justify-center gap-2.5 overflow-clip rounded-2xl bg-[#1a1a1c] p-[18px] text-xs font-medium leading-[18px] tracking-wide text-white"
           >
             <span>
