@@ -1,65 +1,50 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import { BriefCard } from "./_components/BriefCard";
+import { StartProjectBar } from "./_components/StartProjectBar";
+import { FramerBadges } from "./_components/FramerBadges";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Aureum & Co — Creative studio",
+  description:
+    "We break down big ideas into simple, powerful, effective outcomes.",
+};
+
+// Red seam connector between two stacked panels (the blueprint-style rail).
+function Seam({ height }: { height: string }) {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div className={`relative ${height}`}>
+      <span className="absolute left-0 top-0 h-full w-px bg-[#e01228]" />
+      <span className="absolute right-0 top-0 h-full w-px bg-[#e01228]" />
     </div>
+  );
+}
+
+export default function LandingPage() {
+  return (
+    <section
+      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden px-6 py-16"
+      style={{
+        // Approximation of the red motion-blur hero photo.
+        // Swap this for a real asset: backgroundImage: "url('/hero.jpg')" with cover/center.
+        backgroundColor: "#0a0304",
+        backgroundImage: [
+          "radial-gradient(38% 55% at 46% 55%, rgba(255,120,70,0.22), transparent 70%)",
+          "radial-gradient(55% 75% at 66% 44%, rgba(224,30,45,0.45), transparent 62%)",
+          "radial-gradient(85% 80% at 90% 32%, rgba(190,24,38,0.55), transparent 58%)",
+          "radial-gradient(70% 95% at 18% 52%, rgba(45,6,10,0.92), transparent 62%)",
+          "radial-gradient(80% 80% at 74% 96%, rgba(0,0,0,0.9), transparent 55%)",
+          "linear-gradient(115deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 38%)",
+        ].join(", "),
+      }}
+    >
+      {/* The AUREUM & CO header is global (see components/layout/SiteHeader). */}
+      <div className="relative z-10 w-full max-w-160">
+        <BriefCard />
+        <Seam height="h-6" />
+        <StartProjectBar />
+      </div>
+
+      <FramerBadges />
+    </section>
   );
 }
