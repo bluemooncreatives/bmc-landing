@@ -20,22 +20,22 @@ function Seam({ height }: { height: string }) {
 
 export default function LandingPage() {
   return (
-    <section
-      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden px-6 py-16"
-      style={{
-        // Approximation of the red motion-blur hero photo.
-        // Swap this for a real asset: backgroundImage: "url('/hero.jpg')" with cover/center.
-        backgroundColor: "#0a0304",
-        backgroundImage: [
-          "radial-gradient(38% 55% at 46% 55%, rgba(255,120,70,0.22), transparent 70%)",
-          "radial-gradient(55% 75% at 66% 44%, rgba(224,30,45,0.45), transparent 62%)",
-          "radial-gradient(85% 80% at 90% 32%, rgba(190,24,38,0.55), transparent 58%)",
-          "radial-gradient(70% 95% at 18% 52%, rgba(45,6,10,0.92), transparent 62%)",
-          "radial-gradient(80% 80% at 74% 96%, rgba(0,0,0,0.9), transparent 55%)",
-          "linear-gradient(115deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 38%)",
-        ].join(", "),
-      }}
-    >
+    <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#0a0304] px-6 py-16">
+      {/* Video background; bg color above acts as the fallback while it loads. */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden
+        className="absolute inset-0 h-full w-full object-cover blur-sm"
+      >
+        <source src="/0_Abstract_Ink_3840x2160.mp4" type="video/mp4" />
+      </video>
+      {/* Soft dark scrim to keep the floating cards legible over the video */}
+      <div aria-hidden className="absolute inset-0 bg-black/25" />
+
       {/* The Blue Moon Creatives header is global (see components/layout/SiteHeader). */}
       <div className="relative z-10 w-full max-w-160">
         <BriefCard />

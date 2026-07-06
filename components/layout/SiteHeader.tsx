@@ -79,23 +79,39 @@ export function SiteHeader() {
             Brand-pill box metrics taken from the design's computed styles:
             bg rgb(26,26,28), 18px padding, 54px tall, 12px font, flex-column,
             grow/shrink-0/basis-0, 10px gap, overflow clip. */}
-        <div className="relative flex items-stretch gap-3">
+        <div className="relative flex items-stretch">
           <Link
             href="/"
             onClick={() => setOpen(false)}
-            className="relative flex min-w-0 grow basis-0 flex-col items-start justify-center gap-2.5 rounded-sm bg-[#1a1a1c] p-4.5 text-xl font-medium text-white"
+            className="relative flex min-w-0 grow basis-0 flex-col items-start justify-center gap-2.5 rounded-l-sm bg-[#1a1a1c] p-4.5 text-xl font-medium text-white"
           >
             <span className="block max-w-full truncate">
               BLUE MOON CREATIVES
             </span>
           </Link>
 
+          {/* Seam decoration from the reference's Framer structure: a 6px bar is
+              glued flush to each section (pill and toggle), same color so it merges
+              into it. Each bar breaks for 5px at the vertical middle with capsule
+              end-caps, so the two breaks plus the 6px center gap read as a rounded
+              notch punched through the sections' facing edges. The mating edges
+              (pill right, toggle left, bar inner corners) are squared so the bars
+              blend seamlessly; only the gap-facing corners keep the radius. */}
+          <span aria-hidden className="mr-1.5 flex w-1.5 shrink-0 flex-col gap-1.25">
+            <span className="flex-1 rounded-tr-sm bg-[#1a1a1c]" />
+            <span className="flex-1 rounded-br-sm bg-[#1a1a1c]" />
+          </span>
+          <span aria-hidden className="flex w-1.5 shrink-0 flex-col gap-1.25">
+            <span className="flex-1 rounded-tl-sm bg-[#1a1a1c]" />
+            <span className="flex-1 rounded-bl-sm bg-[#1a1a1c]" />
+          </span>
+
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
-            className="flex w-16 items-center justify-center rounded-sm bg-[#1a1a1c] text-white/85 transition-colors hover:text-white sm:w-24"
+            className="flex w-16 items-center justify-center rounded-r-sm bg-[#1a1a1c] text-white/85 transition-colors hover:text-white sm:w-24"
           >
             <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
               {open ? (
