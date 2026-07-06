@@ -3,8 +3,8 @@ import type { NavLink, Project, SocialLink, SubProject } from "@/lib/types";
 // --- Site-wide config ---------------------------------------------------
 
 export const siteConfig = {
-  name: "BMC",
-  title: "BMC — Building, Making, Crafting",
+  name: "Blue Moon Creatives",
+  title: "Blue Moon Creatives — Creative studio",
   description:
     "A personal workspace for the things I build, make, and craft. Projects, experiments, and the stories behind them.",
   author: "Pratik Das",

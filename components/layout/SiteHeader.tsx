@@ -74,7 +74,7 @@ export function SiteHeader() {
         />
       ) : null}
 
-      <header className="fixed inset-x-0 top-6 z-50 mx-auto w-full max-w-172 px-6">
+      <header className="fixed inset-x-0 top-[50px] z-50 mx-auto w-full max-w-172 px-6">
         {/* Bar: brand pill + toggle.
             Brand-pill box metrics taken from the design's computed styles:
             bg rgb(26,26,28), 18px padding, 54px tall, 12px font, flex-column,
@@ -83,10 +83,10 @@ export function SiteHeader() {
           <Link
             href="/"
             onClick={() => setOpen(false)}
-            className="relative flex h-[54px] shrink-0 grow basis-0 flex-col items-start justify-center gap-2.5 overflow-clip rounded-2xl bg-[#1a1a1c] p-[18px] text-xs font-medium leading-[18px] tracking-wide text-white"
+            className="relative flex h-[54px] shrink-0 grow basis-0 flex-col items-start justify-center gap-2.5 overflow-clip rounded-2xl bg-[#1a1a1c] p-[18px] text-xs font-medium leading-[18px] text-white"
           >
             <span>
-              AUREUM <span className="text-white/45">&amp;</span> CO
+              BLUE MOON CREATIVES
               <span className="ml-0.5 align-super text-[8px] text-white/60">®</span>
             </span>
           </Link>

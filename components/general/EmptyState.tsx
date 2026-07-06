@@ -14,7 +14,7 @@ export function EmptyState({ icon = "🗂️", title, description, action }: Emp
       <div className="mb-4 text-4xl" aria-hidden>
         {icon}
       </div>
-      <h3 className="text-lg font-semibold tracking-tight">{title}</h3>
+      <h3 className="text-lg font-semibold">{title}</h3>
       <p className="mt-2 max-w-sm text-sm leading-6 text-zinc-600 dark:text-zinc-400">
         {description}
       </p>

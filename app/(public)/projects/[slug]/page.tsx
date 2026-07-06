@@ -46,7 +46,7 @@ export default async function ProjectPage({ params }: PageProps) {
           {project.cover}
         </div>
         <div>
-          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h1 className="text-3xl font-semibold sm:text-4xl">
             {project.title}
           </h1>
           <p className="mt-3 max-w-2xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
@@ -65,7 +65,7 @@ export default async function ProjectPage({ params }: PageProps) {
       </p>
 
       <section className="mt-16">
-        <h2 className="text-2xl font-semibold tracking-tight">Sub-projects</h2>
+        <h2 className="text-2xl font-semibold">Sub-projects</h2>
         <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
           The individual efforts that make up {project.title}.
         </p>

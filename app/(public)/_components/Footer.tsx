@@ -6,7 +6,7 @@ export function Footer() {
     <footer className="border-t border-black/[.06] dark:border-white/[.08]">
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-6 px-6 py-10 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="text-sm font-semibold tracking-tight">{siteConfig.name}</p>
+          <p className="text-sm font-semibold">{siteConfig.name}</p>
           <p className="mt-1 text-sm text-zinc-500">
             © {new Date().getFullYear()} {siteConfig.author}. All rights reserved.
           </p>

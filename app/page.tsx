@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { BriefCard } from "./_components/BriefCard";
 import { StartProjectBar } from "./_components/StartProjectBar";
-import { FramerBadges } from "./_components/FramerBadges";
 
 export const metadata: Metadata = {
-  title: "Aureum & Co — Creative studio",
+  title: "Blue Moon Creatives — Creative studio",
   description:
     "We break down big ideas into simple, powerful, effective outcomes.",
 };
@@ -37,14 +36,12 @@ export default function LandingPage() {
         ].join(", "),
       }}
     >
-      {/* The AUREUM & CO header is global (see components/layout/SiteHeader). */}
+      {/* The Blue Moon Creatives header is global (see components/layout/SiteHeader). */}
       <div className="relative z-10 w-full max-w-160">
         <BriefCard />
         <Seam height="h-6" />
         <StartProjectBar />
       </div>
-
-      <FramerBadges />
     </section>
   );
 }

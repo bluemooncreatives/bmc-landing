@@ -12,7 +12,7 @@ export function BriefCard() {
   return (
     <div className="rounded-[20px] bg-white px-7 py-6 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)]">
       {/* Heading */}
-      <h1 className="max-w-[34rem] text-[26px] font-bold leading-[1.15] tracking-tight text-[#141414] sm:text-[28px]">
+      <h1 className="max-w-[34rem] text-[26px] font-bold leading-[1.15] text-[#141414] sm:text-[28px]">
         We break down big ideas into simple, powerful, effective outcomes.
       </h1>
 

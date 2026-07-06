@@ -3,13 +3,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-sans: "Hanken Grotesk", sans-serif;
+  --font-mono: monospace;
+  --global-letter-spacing: -0.08em;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +25,43 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+}
+
+/*
+ * letter-spacing resolves em units to an absolute length at declaration time,
+ * so setting it once on body and relying on inheritance would bake in body's
+ * font-size rather than -8% of each element's own size. Apply it everywhere
+ * directly so every element gets a true -8% relative to its own font-size.
+ * Tailwind's preflight sets `letter-spacing: inherit` on form elements at
+ * the same (element-selector) specificity, so they're repeated here to win
+ * via source order instead of falling back to the inherited px value.
+ */
+*,
+::before,
+::after,
+button,
+input,
+select,
+optgroup,
+textarea,
+::file-selector-button {
+  letter-spacing: var(--global-letter-spacing);
+}
+
+.hanken-grotesk {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  letter-spacing: var(--global-letter-spacing);
 }

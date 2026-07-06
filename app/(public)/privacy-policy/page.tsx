@@ -37,7 +37,7 @@ export default function PrivacyPolicyPage() {
       <div className="mt-12 space-y-10">
         {sections.map((section) => (
           <section key={section.heading}>
-            <h2 className="text-lg font-semibold tracking-tight">
+            <h2 className="text-lg font-semibold">
               {section.heading}
             </h2>
             <p className="mt-2 text-base leading-7 text-zinc-600 dark:text-zinc-400">

@@ -32,7 +32,7 @@ export function Timeline() {
         <li key={item.year} className="ml-6 pb-10 last:pb-0">
           <span className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-background bg-foreground" />
           <p className="text-sm font-medium text-zinc-500">{item.year}</p>
-          <h3 className="mt-1 text-lg font-semibold tracking-tight">{item.title}</h3>
+          <h3 className="mt-1 text-lg font-semibold">{item.title}</h3>
           <p className="mt-1 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
             {item.description}
           </p>

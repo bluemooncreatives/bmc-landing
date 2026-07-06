@@ -31,7 +31,7 @@ export function ContactForm() {
         <p className="text-2xl" aria-hidden>
           ✅
         </p>
-        <h3 className="mt-2 text-lg font-semibold tracking-tight">Message sent</h3>
+        <h3 className="mt-2 text-lg font-semibold">Message sent</h3>
         <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
           Thanks for reaching out — I&apos;ll get back to you soon.
         </p>

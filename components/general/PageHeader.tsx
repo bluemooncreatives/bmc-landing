@@ -10,7 +10,7 @@ export function PageHeader({ eyebrow, title, description }: PageHeaderProps) {
       {eyebrow ? (
         <p className="text-sm font-medium text-zinc-500">{eyebrow}</p>
       ) : null}
-      <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
+      <h1 className="mt-2 text-3xl font-semibold sm:text-4xl">
         {title}
       </h1>
       {description ? (

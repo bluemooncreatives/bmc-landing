@@ -67,7 +67,7 @@ export default async function SubProjectPage({ params }: PageProps) {
           </Badge>
           <span className="text-sm text-zinc-500">{subProject.year}</span>
         </div>
-        <h1 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+        <h1 className="mt-4 text-3xl font-semibold sm:text-4xl">
           {subProject.title}
         </h1>
         <p className="mt-3 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
