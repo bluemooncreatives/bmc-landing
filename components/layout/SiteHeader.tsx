@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -113,13 +114,21 @@ export function SiteHeader() {
             aria-expanded={open}
             className="flex w-16 items-center justify-center rounded-r-sm bg-[#1a1a1c] text-white/85 transition-colors hover:text-white sm:w-24"
           >
-            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
-              {open ? (
+            {open ? (
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
                 <path d="M6 6l12 12M18 6L6 18" />
-              ) : (
-                <path d="M12 5v14M5 12h14" />
-              )}
-            </svg>
+              </svg>
+            ) : (
+              /* Black-stroke source icon, inverted to white for the dark button */
+              <Image
+                src="/core-icon.png"
+                alt=""
+                width={26}
+                height={26}
+                className="invert"
+                aria-hidden
+              />
+            )}
           </button>
         </div>
 
